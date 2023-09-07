@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [cityName, setCityName] = useState("Rome");
+  const [cityName, setCityName] = useState("Taiwan");
   const [inputText, setInputText] = useState("");
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const appid = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=189271b827844bff7388350c44848615&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${appid}&units=metric`
     )
       .then((res) => {
         if (res.status === 200) {
@@ -26,7 +27,7 @@ function App() {
       })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
-  }, [cityName, error]);
+  }, [cityName, error, appid]);
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
