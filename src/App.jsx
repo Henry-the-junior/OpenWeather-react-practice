@@ -31,7 +31,7 @@ function App() {
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
-      setCityName(e.target.value);
+      setCityName(inputText);
       setInputText("");
     }
   };
@@ -60,6 +60,7 @@ function App() {
 
           <h1 className="temp">{data.main.temp.toFixed()} °C</h1>
 
+          {/* Slide 讓這個區塊在讀取到完成顯示的過程，有動態的效果 */}
           <Slide direction="right" timeout={800} in={!loading}>
             <div className="box_container">
               <div className="box">

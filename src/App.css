@@ -26,6 +26,7 @@ body {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
+/* .group 讓天氣的 icon 和天氣的敘述並排 */
 .group {
   display: flex;
   gap: 10px;
