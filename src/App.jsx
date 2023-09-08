@@ -87,3 +87,7 @@ function App() {
 }
 
 export default App;
+
+// [OpenWeather Current weather data](https://openweathermap.org/current)
+// [OpenWeather Weather icons](https://openweathermap.org/weather-conditions)
+// [Slide API](https://mui.com/material-ui/api/slide/)
